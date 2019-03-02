@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="@string/app_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/toolbar1"/>
+
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/etId"
+        app:layout_constraintTop_toBottomOf="@id/toolbar1"
+        android:padding="5dp"
+        android:text="ID" />
+    <EditText
+        android:id="@+id/etId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/tvId"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar1" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/etTitle"
+        app:layout_constraintTop_toBottomOf="@id/etId"
+        android:padding="5dp"
+        android:text="Title"/>
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/tvTitle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etId" />
+
+    <TextView
+        android:id="@+id/tvArtist"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/etArtist"
+        app:layout_constraintTop_toBottomOf="@id/etTitle"
+        android:padding="5dp"
+        android:text="Artist"/>
+    <EditText
+        android:id="@+id/etArtist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/tvArtist"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTitle" />
+
+    <TextView
+        android:id="@+id/tvYear"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/etYear"
+        app:layout_constraintTop_toBottomOf="@id/etArtist"
+        android:padding="5dp"
+        android:text="Year"/>
+    <EditText
+        android:id="@+id/etYear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/tvYear"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etArtist" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btnSearch"
+        app:layout_constraintTop_toBottomOf="@id/etYear"
+        android:layout_marginTop="10dp"
+        android:text="@string/btnAdd"/>
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/btnAdd"
+        app:layout_constraintRight_toLeftOf="@id/btnUpdate"
+        app:layout_constraintTop_toBottomOf="@id/etYear"
+        android:layout_marginTop="10dp"
+        android:text="@string/btnSearch"/>
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/btnSearch"
+        app:layout_constraintRight_toLeftOf="@id/btnDelete"
+        app:layout_constraintTop_toBottomOf="@id/etYear"
+        android:layout_marginTop="10dp"
+        android:text="@string/btnUpdate"/>
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/btnUpdate"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etYear"
+        android:layout_marginTop="10dp"
+        android:text="@string/btnDelete"/>
+
+</android.support.constraint.ConstraintLayout>

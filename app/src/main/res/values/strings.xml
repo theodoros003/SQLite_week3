@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SQLite_week3</string>
+    <string name="btnAdd">Add</string>
+    <string name="btnSearch">Search</string>
+    <string name="btnUpdate">Update</string>
+    <string name="btnDelete">Delete</string>
+</resources>
