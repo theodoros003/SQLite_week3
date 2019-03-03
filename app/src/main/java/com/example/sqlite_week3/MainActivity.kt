@@ -2,6 +2,7 @@ package com.example.sqlite_week3
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,15 +20,27 @@ class MainActivity : AppCompatActivity() {
             val title = etTitle.text.toString()
             val artist = etArtist.text.toString()
             val year = etYear.text.toString().toLong()
-            val id = myData.addMusic(title, artist, year)
-
-
+            myData.addMusic(title, artist, year)
+            Toast.makeText(this, "You have added this song ", Toast.LENGTH_LONG).show()
         }
         btnSearch.setOnClickListener {
-            val findId = etId.text.toString().toLong()
-            val data = myData.viewMusic(findId)
+            val id = etId.text.toString().toLong()
+            val data = myData.viewMusic(id)
             etTitle.setText(data?.title)
             etArtist.setText(data?.artist)
+            etYear.setText(data?.year.toString())
+            Toast.makeText ( this, "You have search for the song with id: " + id, Toast.LENGTH_LONG).show()
+        }
+        btnUpdate.setOnClickListener {
+            val id = etId.text.toString().toLong()
+            val title = etTitle.text.toString()
+            val artist = etArtist.text.toString()
+            val year = etYear.text.toString().toLong()
+            myData.updateDb(id, title, artist, year)
+        }
+        btnDelete.setOnClickListener {
+            val id = etId.text.toString().toLong()
+            myData.delete(id)
         }
     }
 

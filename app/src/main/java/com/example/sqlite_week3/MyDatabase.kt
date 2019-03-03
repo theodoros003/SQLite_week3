@@ -44,4 +44,23 @@ class MyDatabase(ctx: Context) : SQLiteOpenHelper(ctx,"MusicDB", null, 1) {
         cursor.close()
         return null;
     }
+
+    fun updateDb(id: Long, title: String, artist: String, year: Long) :Int {
+        val db = writableDatabase
+        val stmt = db.compileStatement ("UPDATE Music SET Title=?, Artist=?, Year=? WHERE Id=?");
+        stmt.bindString (1, title)
+        stmt.bindString (2, artist)
+        stmt.bindLong (3, year)
+        stmt.bindLong (4, id)
+        val nAffectedRows = stmt.executeUpdateDelete();
+        return nAffectedRows
+    }
+
+    fun delete(id: Long) : Int {
+        val db = writableDatabase
+        val stmt = db.compileStatement  ("DELETE FROM Music WHERE Id=?");
+        stmt.bindLong (1, id)
+        val nAffectedRows = stmt.executeUpdateDelete();
+        return nAffectedRows
+    }
 }
